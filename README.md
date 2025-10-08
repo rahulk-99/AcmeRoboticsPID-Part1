@@ -1,8 +1,12 @@
-# cpp-boilerplate-v2
+# Acme Robotics PID Controller Project
 
-# C++ Boilerplate v2 Badges
-![CICD Workflow status](https://github.com/TommyChangUMD/cpp-boilerplate-v2/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/TommyChangUMD/cpp-boilerplate-v2/branch/main/graph/badge.svg)](https://codecov.io/gh/TommyChangUMD/cpp-boilerplate-v2) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+# C++ Acme Robotics PID Badges
+![CICD Workflow status](https://github.com/rahulk-99/AcmeRoboticsPID-Part1/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/rahulk-99/AcmeRoboticsPID-Part1/branch/main/graph/badge.svg)](https://codecov.io/gh/rahulk-99/AcmeRoboticsPID-Part1) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+---
+## Part 1 Authors
+* **Driver:** Rahul Kumar (`rahulk-99`)
+* **Navigator:** Venkata Madhav Tadavarthi (`madhav2133`)
 
 ## Overview
 
