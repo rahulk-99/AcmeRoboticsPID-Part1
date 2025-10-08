@@ -3,6 +3,8 @@ add_executable(cpp-test
   # list of source cpp files:
   main.cpp
   test.cpp
+  pid_test.cpp
+  ${CMAKE_SOURCE_DIR}/app/pid.cpp # to include the pid.cpp file from the app directory
   )
 
 # Any include directories needed to build this target.
