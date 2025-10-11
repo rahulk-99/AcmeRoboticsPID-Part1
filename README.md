@@ -16,7 +16,7 @@
 This project implements a PID (Proportional-Integral-Derivative) controller for Acme Robotics' mobile robot platform. The controller is designed to provide precise velocity control through feedback mechanisms.
 
 ### UML Design
-![PID Controller Class Diagram](ClassUML_Diagram.png)
+![PID Controller Class Diagram](Class_UML_Diagram.png)
 
 ### Project Structure
 The project uses:
