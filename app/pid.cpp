@@ -32,6 +32,11 @@
   * The input parameters are ignored for now.
   */
  double PID::compute_vel(double target_vel, double current_vel) {
-     // Stub implementation returns a constant value as required by the assignment.
-     return 5.0;
+    double error = target_vel - current_vel;
+    _integral += error * _dt;
+
+    double derivative = (error - _previous_error) / _dt;
+    _previous_error = error;
+    
+    return _Kp * error + _Ki * _integral + _Kd * derivative;
  }
