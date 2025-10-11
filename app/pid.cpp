@@ -18,12 +18,12 @@
   * @param dt Time step interval in seconds.
   */
  PID::PID(double Kp, double Ki, double Kd, double dt) :
-     _Kp(Kp),
-     _Ki(Ki),
-     _Kd(Kd),
-     _dt(dt),
-     _integral(0.0),
-     _previous_error(0.0) {}
+     _Kp{Kp},
+     _Ki{Ki},
+     _Kd{Kd},
+     _dt{dt},
+     _integral{0.0},
+     _previous_error{0.0} {}
  
  /**
   * @brief Implementation of velocity computation using PID control.
@@ -32,11 +32,11 @@
   * The input parameters are ignored for now.
   */
  double PID::compute_vel(double target_vel, double current_vel) {
-    double error = target_vel - current_vel;
+    const double error{target_vel - current_vel};
     _integral += error * _dt;
 
-    double derivative = (error - _previous_error) / _dt;
+    const double derivative{(error - _previous_error) / _dt};
     _previous_error = error;
-    
+
     return _Kp * error + _Ki * _integral + _Kd * derivative;
  }
