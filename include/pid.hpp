@@ -1,53 +1,49 @@
 /**
  * @file pid.hpp
- * @author Rahul Kumar
+ * @author Part1- Driver:  Rahul Kumar
+ * @author Part1- Navigator:  Venkata Madhav Tadavarthi
+ * @author Part2- Driver and Navigator:  Marcus William Hurt
  * @brief PID Controller class declaration for Acme Robotics mobile robot
- * @version 0.1
+ * @version 0.2
  * @copyright Copyright (c) 2025
- * 
- * This class implements a PID controller for velocity control in mobile robots.
- * The controller takes target velocity and current velocity as inputs and
- * computes the control output using proportional, integral, and derivative terms.
  */
 
-#ifndef _PID_H_
-#define _PID_H_
-
-/**
- * @class PID
- * @brief A PID controller that computes velocity based on target and current values
- * 
- * This class implements a PID (Proportional-Integral-Derivative) controller
- * for precise velocity control. It maintains three gain parameters:
- * - Proportional gain (k_p) for immediate error correction
- * - Integral gain (k_i) for eliminating steady-state error
- * - Derivative gain (k_d) for dampening oscillations
- */
-class PID {
-    public:
-        /**
-         * @brief Construct a new PID controller
-         * @param k_p Proportional gain coefficient
-         * @param k_i Integral gain coefficient
-         * @param k_d Derivative gain coefficient
-         */
-        PID(double k_p, double k_i, double k_d);
-
-        /**
-         * @brief Compute new velocity using PID control
-         * @param target_vel Target velocity setpoint
-         * @param current_vel Current actual velocity
-         * @return double Computed velocity command
-         * 
-         * This method implements the PID control law but is implemented as stub:
-         * return a constant value.
-         */
-        double compute_vel(double target_vel, double current_vel);
-
-    private:
-        double k_p;  ///< Proportional gain coefficient
-        double k_i;  ///< Integral gain coefficient
-        double k_d;  ///< Derivative gain coefficient
-};
-
-#endif
+ #ifndef PID_HPP
+ #define PID_HPP
+ 
+ /**
+  * @class PID
+  * @brief A PID controller that computes velocity based on target and current values.
+  */
+ class PID {
+ public:
+     /**
+      * @brief Construct a new PID controller object.
+      * @param Kp Proportional gain coefficient.
+      * @param Ki Integral gain coefficient.
+      * @param Kd Derivative gain coefficient.
+      * @param dt Time step interval in seconds.
+      */
+     PID(double Kp, double Ki, double Kd, double dt);
+ 
+     /**
+      * @brief Compute new velocity using PID control.
+      * @param target_vel Target velocity setpoint.
+      * @param current_vel Current actual velocity.
+      * @return double Computed velocity command.
+      */
+     double compute_vel(double target_vel, double current_vel);
+ 
+ private:
+     // PID Gains
+     double _Kp;  ///< Proportional gain coefficient
+     double _Ki;  ///< Integral gain coefficient
+     double _Kd;  ///< Derivative gain coefficient
+ 
+     // State Variables
+     double _dt;             ///< Time step in seconds
+     double _integral;       ///< Accumulated integral error
+     double _previous_error; ///< Error from the previous time step
+ };
+ 
+ #endif // PID_HPP
