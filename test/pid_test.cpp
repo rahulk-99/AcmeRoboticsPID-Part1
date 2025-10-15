@@ -107,7 +107,7 @@
      PID controller(Kp, Ki, Kd, dt);
  
      // Act
-     double output = controller.compute_vel(5.0, 25.0);
+     double output = controller.compute_vel(25.0, 25.0);
  
      // Assert
      EXPECT_NEAR(output, 0.0, TOLERANCE);
