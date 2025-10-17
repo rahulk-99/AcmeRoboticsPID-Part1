@@ -130,3 +130,23 @@ Note: When you click on the codecov badge, you should see the coverage
 report.  You should also see the source file listing.  If not, you may
 need to login your codecov account first.
 
+## Future Work
+The tests could be expanded to cover some edge cases:
+
+1. Negative Error Handling
+Test that the controller responds correctly when the current velocity exceeds the target (i.e., error is negative).
+
+2. Integral Windup
+Test the controller’s behavior when the integral term grows very large (simulate repeated error over many steps).
+
+3. Zero Gains
+Test that with all gains set to zero, the output is always zero regardless of input.
+
+4. Rapidly Changing Target
+Test the controller’s response to a sudden change in target velocity.
+
+5. Multiple Calls with Varying Error
+Test that the controller correctly accumulates integral and updates derivative with a sequence of varying errors.
+
+6. Initial Derivative Term
+Test that the derivative term is handled correctly on the very first call.
